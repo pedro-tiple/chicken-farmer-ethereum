@@ -11,8 +11,7 @@ contract BarnRegistrationCenter {
 
     function registerBarn(address _barnAddress) external {
         require(barnIsOwnedBy[_barnAddress] == address(0), "Barn already owned");
-
-        // TODO make sure the Barn isn't in test mode. check if it's the expected smart contract bytecode?
+        // TODO check if it's the expected smart contract bytecode?
 
         // first barn is free, next ones cost gold eggs
         if (barnsOwnedBy[msg.sender].length > 0) {

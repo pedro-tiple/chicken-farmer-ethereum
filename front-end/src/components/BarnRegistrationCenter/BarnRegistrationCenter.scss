@@ -1,0 +1,29 @@
+.barn-registration-center {
+  min-width: 320px;
+  display: flex;
+  height: 100vh;
+  width: 10vw;
+
+  .owner-info {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    display: flex;
+    width: 100%;
+
+    button {
+      margin-top: 20px;
+      padding: 10px 30px;
+    }
+
+    .error {
+      margin-top: 20px;
+      color: red;
+
+    }
+  }
+
+  .barns {
+
+  }
+}
