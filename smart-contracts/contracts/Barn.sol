@@ -64,4 +64,8 @@ contract Barn {
         chickens[_chickenBarcode].restingUntil = block.number + rng / 2;
         availableFeed -= 1;
     }
+
+    function getChickenCount() public view returns (uint) {
+		return chickens.length;
+	}
 }

@@ -1,2 +1,47 @@
 .chicken {
+  width: 100%;
+
+  .chicken-img {
+    background-image: url("/chicken.gif");
+    margin: 0 auto;
+    height: 50px;
+    width: 50px;
+
+    &.standing-left {
+      background-position: -32px -148px;
+    }
+
+    &.standing-right {
+      background-position: -108px -148px;
+    }
+
+    &.sitting-left {
+      background-position: -182px -148px;
+    }
+
+    &.sitting-right {
+      background-position: -32px -148px;
+    }
+
+    &.feeding {
+      background-position: -320px -207px;
+    }
+  }
+
+  .chicken-stats {
+    justify-content: space-between;
+    align-items: baseline;
+    display: flex;
+    width: 100%;
+
+    span {
+      vertical-align: center;
+      height: 20px;
+    }
+  }
+
+  button {
+    display: block;
+    margin: 10px auto;
+  }
 }

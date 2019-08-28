@@ -1,2 +1,27 @@
 .barn {
+  border: 1px dashed lightgray;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  display: inline-flex;
+
+  .stats {
+    margin-top: 20px;
+
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+  }
+
+  .actions {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+  }
+
+  .chickens {
+    margin-top: 50px;
+    width: 100%;
+  }
 }
