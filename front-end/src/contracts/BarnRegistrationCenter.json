@@ -46,8 +46,13 @@
     },
     {
       "constant": false,
-      "inputs": [],
-      "name": "spendGoldEgg",
+      "inputs": [
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "spendGoldEggs",
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -82,25 +87,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"receiveNewGoldEgg\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"barnCostInGoldEggs\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getGoldEggCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"spendGoldEgg\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getOwnedBarns\",\"outputs\":[{\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_barnAddress\",\"type\":\"address\"}],\"name\":\"registerBarn\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/media/pedro/Files/Pessoal/Projects/chicken-farmer-ethereum/smart-contracts/contracts/BarnRegistrationCenter.sol\":\"BarnRegistrationCenter\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/media/pedro/Files/Pessoal/Projects/chicken-farmer-ethereum/smart-contracts/contracts/BarnRegistrationCenter.sol\":{\"keccak256\":\"0xae189abe83fd00b452c1d9bc43f0006094d7410cafd1bef77227eefb29b0edaf\",\"urls\":[\"bzzr://b537c48413a9b442b53ef3828ce5968121c6c339a398b7d15232fb5c89755bd8\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610a8e806100206000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c806304666a3e146100675780632b872302146100715780636561c0f01461009557806398db83e7146100b357806399d2b2d9146100bd578063a2b7586b1461011c575b600080fd5b61006f610160565b005b61007961030f565b604051808260ff1660ff16815260200191505060405180910390f35b61009d610314565b6040518082815260200191505060405180910390f35b6100bb61035b565b005b6100c561061e565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156101085780820151818401526020810190506100ed565b505050509050019250505060405180910390f35b61015e6004803603602081101561013257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106e9565b005b600073ffffffffffffffffffffffffffffffffffffffff166000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415610261576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f4261726e206e6f74206f776e656400000000000000000000000000000000000081525060200191505060405180910390fd5b6001600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550565b600a81565b6000600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905090565b600073ffffffffffffffffffffffffffffffffffffffff166000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16141561045c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f4261726e206e6f74206f776e656400000000000000000000000000000000000081525060200191505060405180910390fd5b6001600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610570576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260168152602001807f4e6f20676f6c64206567677320617661696c61626c650000000000000000000081525060200191505060405180910390fd5b6001600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550565b6060600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208054806020026020016040519081016040528092919081815260200182805480156106df57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610695575b5050505050905090565b600073ffffffffffffffffffffffffffffffffffffffff166000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16146107e9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260128152602001807f4261726e20616c7265616479206f776e6564000000000000000000000000000081525060200191505060405180910390fd5b6000600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080549050111561093f57600a60ff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410156108ed576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260148152602001807f4e6f7420656e6f75676820676f6c64206567677300000000000000000000000081525060200191505060405180910390fd5b600a60ff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055505b336000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505056fea165627a7a72305820dc5e52baa8ed23bcb111e8d8d60c5c88d3cde1b315342682c29ef9d3b044eb4a0029",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c806304666a3e146100675780632b872302146100715780636561c0f01461009557806398db83e7146100b357806399d2b2d9146100bd578063a2b7586b1461011c575b600080fd5b61006f610160565b005b61007961030f565b604051808260ff1660ff16815260200191505060405180910390f35b61009d610314565b6040518082815260200191505060405180910390f35b6100bb61035b565b005b6100c561061e565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156101085780820151818401526020810190506100ed565b505050509050019250505060405180910390f35b61015e6004803603602081101561013257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106e9565b005b600073ffffffffffffffffffffffffffffffffffffffff166000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415610261576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f4261726e206e6f74206f776e656400000000000000000000000000000000000081525060200191505060405180910390fd5b6001600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550565b600a81565b6000600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905090565b600073ffffffffffffffffffffffffffffffffffffffff166000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16141561045c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f4261726e206e6f74206f776e656400000000000000000000000000000000000081525060200191505060405180910390fd5b6001600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610570576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260168152602001807f4e6f20676f6c64206567677320617661696c61626c650000000000000000000081525060200191505060405180910390fd5b6001600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550565b6060600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208054806020026020016040519081016040528092919081815260200182805480156106df57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610695575b5050505050905090565b600073ffffffffffffffffffffffffffffffffffffffff166000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16146107e9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260128152602001807f4261726e20616c7265616479206f776e6564000000000000000000000000000081525060200191505060405180910390fd5b6000600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080549050111561093f57600a60ff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410156108ed576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260148152602001807f4e6f7420656e6f75676820676f6c64206567677300000000000000000000000081525060200191505060405180910390fd5b600a60ff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055505b336000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505056fea165627a7a72305820dc5e52baa8ed23bcb111e8d8d60c5c88d3cde1b315342682c29ef9d3b044eb4a0029",
-  "sourceMap": "25:1671:1:-;;;257:23;8:9:-1;5:2;;;30:1;27;20:12;5:2;257:23:1;25:1671;;;;;;",
-  "deployedSourceMap": "25:1671:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:1671:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;970:224;;;:::i;:::-;;63:45;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1589:105;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1200:265;;;:::i;:::-;;1471:112;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1471:112:1;;;;;;;;;;;;;;;;;286:678;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;286:678:1;;;;;;;;;;;;;;;;;;;:::i;:::-;;970:224;1063:1;1026:39;;:13;:25;1040:10;1026:25;;;;;;;;;;;;;;;;;;;;;;;;;:39;;;;1018:66;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1186:1;1140:15;:42;1156:13;:25;1170:10;1156:25;;;;;;;;;;;;;;;;;;;;;;;;;1140:42;;;;;;;;;;;;;;;;:47;;;;;;;;;;;970:224::o;63:45::-;106:2;63:45;:::o;1589:105::-;1637:4;1660:15;:27;1676:10;1660:27;;;;;;;;;;;;;;;;1653:34;;1589:105;:::o;1200:265::-;1288:1;1251:39;;:13;:25;1265:10;1251:25;;;;;;;;;;;;;;;;;;;;;;;;;:39;;;;1243:66;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1373:1;1327:15;:42;1343:13;:25;1357:10;1343:25;;;;;;;;;;;;;;;;;;;;;;;;;1327:42;;;;;;;;;;;;;;;;:47;;1319:82;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1457:1;1411:15;:42;1427:13;:25;1441:10;1427:25;;;;;;;;;;;;;;;;;;;;;;;;;1411:42;;;;;;;;;;;;;;;;:47;;;;;;;;;;;1200:265::o;1471:112::-;1517:16;1552:12;:24;1565:10;1552:24;;;;;;;;;;;;;;;1545:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1471:112;:::o;286:678::-;396:1;357:41;;:13;:27;371:12;357:27;;;;;;;;;;;;;;;;;;;;;;;;;:41;;;349:72;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;594:1;560:12;:24;573:10;560:24;;;;;;;;;;;;;;;:31;;;;:35;556:298;;;106:2;619:49;;:15;:27;635:10;619:27;;;;;;;;;;;;;;;;:49;;611:82;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;106:2;794:49;;:15;:27;810:10;794:27;;;;;;;;;;;;;;;;:49;;;;;;;;;;;556:298;894:10;864:13;:27;878:12;864:27;;;;;;;;;;;;;;;;:40;;;;;;;;;;;;;;;;;;914:12;:24;927:10;914:24;;;;;;;;;;;;;;;944:12;914:43;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;914:43:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;286:678;:::o",
-  "source": "pragma solidity ^0.5.8;\n\ncontract BarnRegistrationCenter {\n    uint8 public constant barnCostInGoldEggs = 10;\n\n    mapping(address => address) barnIsOwnedBy;\n    mapping(address => address[]) barnsOwnedBy;\n    mapping(address => uint) goldEggsOwnedBy;\n\n    constructor() public {}\n\n    function registerBarn(address _barnAddress) external {\n        require(barnIsOwnedBy[_barnAddress] == address(0), \"Barn already owned\");\n        // TODO check if it's the expected smart contract bytecode?\n\n        // first barn is free, next ones cost gold eggs\n        if (barnsOwnedBy[msg.sender].length > 0) {\n            require(goldEggsOwnedBy[msg.sender] >= barnCostInGoldEggs, \"Not enough gold eggs\");\n\n            // no need for safe math because we already checked that there are enough\n            goldEggsOwnedBy[msg.sender] -= barnCostInGoldEggs;\n        }\n\n        barnIsOwnedBy[_barnAddress] = msg.sender;\n        barnsOwnedBy[msg.sender].push(_barnAddress);\n    }\n\n    function receiveNewGoldEgg() external {\n        require(barnIsOwnedBy[msg.sender] != address(0), \"Barn not owned\");\n        // should we check if this overflows?\n        goldEggsOwnedBy[barnIsOwnedBy[msg.sender]] += 1;\n    }\n\n    function spendGoldEgg() external {\n        require(barnIsOwnedBy[msg.sender] != address(0), \"Barn not owned\");\n        require(goldEggsOwnedBy[barnIsOwnedBy[msg.sender]] >= 1, \"No gold eggs available\");\n        goldEggsOwnedBy[barnIsOwnedBy[msg.sender]] -= 1;\n    }\n\n    function getOwnedBarns() public view returns (address[] memory) {\n        return barnsOwnedBy[msg.sender];\n    }\n\n    function getGoldEggCount() public view returns (uint) {\n        return goldEggsOwnedBy[msg.sender];\n    }\n}\n",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"spendGoldEggs\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"receiveNewGoldEgg\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"barnCostInGoldEggs\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getGoldEggCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getOwnedBarns\",\"outputs\":[{\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_barnAddress\",\"type\":\"address\"}],\"name\":\"registerBarn\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/media/pedro/Files/Pessoal/Projects/chicken-farmer-ethereum/smart-contracts/contracts/BarnRegistrationCenter.sol\":\"BarnRegistrationCenter\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/media/pedro/Files/Pessoal/Projects/chicken-farmer-ethereum/smart-contracts/contracts/BarnRegistrationCenter.sol\":{\"keccak256\":\"0x59f776ea1508f3c2559b11b60d9ca2820c678abfb8e926d4a4ed494d00f379e4\",\"urls\":[\"bzzr://5c3591ac0279066dc5c7748156776aa37647c8eb25aa7cc848c3775a7fa94110\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610ab1806100206000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c80630311f95f1461006757806304666a3e146100955780632b8723021461009f5780636561c0f0146100c357806399d2b2d9146100e1578063a2b7586b14610140575b600080fd5b6100936004803603602081101561007d57600080fd5b8101908080359060200190929190505050610184565b005b61009d610446565b005b6100a76105f5565b604051808260ff1660ff16815260200191505060405180910390f35b6100cb6105fa565b6040518082815260200191505060405180910390f35b6100e9610641565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b8381101561012c578082015181840152602081019050610111565b505050509050019250505060405180910390f35b6101826004803603602081101561015657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061070c565b005b600073ffffffffffffffffffffffffffffffffffffffff166000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415610285576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f4261726e206e6f74206f776e656400000000000000000000000000000000000081525060200191505060405180910390fd5b80600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610398576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260168152602001807f4e6f20676f6c64206567677320617661696c61626c650000000000000000000081525060200191505060405180910390fd5b80600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555050565b600073ffffffffffffffffffffffffffffffffffffffff166000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415610547576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f4261726e206e6f74206f776e656400000000000000000000000000000000000081525060200191505060405180910390fd5b6001600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550565b600a81565b6000600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905090565b6060600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080548060200260200160405190810160405280929190818152602001828054801561070257602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116106b8575b5050505050905090565b600073ffffffffffffffffffffffffffffffffffffffff166000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461080c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260128152602001807f4261726e20616c7265616479206f776e6564000000000000000000000000000081525060200191505060405180910390fd5b6000600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080549050111561096257600a60ff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610910576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260148152602001807f4e6f7420656e6f75676820676f6c64206567677300000000000000000000000081525060200191505060405180910390fd5b600a60ff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055505b336000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505056fea165627a7a7230582041604f962eb0d6e70ff473861d7b805f5a85f591bcd338df576813ea029e97b80029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c80630311f95f1461006757806304666a3e146100955780632b8723021461009f5780636561c0f0146100c357806399d2b2d9146100e1578063a2b7586b14610140575b600080fd5b6100936004803603602081101561007d57600080fd5b8101908080359060200190929190505050610184565b005b61009d610446565b005b6100a76105f5565b604051808260ff1660ff16815260200191505060405180910390f35b6100cb6105fa565b6040518082815260200191505060405180910390f35b6100e9610641565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b8381101561012c578082015181840152602081019050610111565b505050509050019250505060405180910390f35b6101826004803603602081101561015657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061070c565b005b600073ffffffffffffffffffffffffffffffffffffffff166000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415610285576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f4261726e206e6f74206f776e656400000000000000000000000000000000000081525060200191505060405180910390fd5b80600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610398576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260168152602001807f4e6f20676f6c64206567677320617661696c61626c650000000000000000000081525060200191505060405180910390fd5b80600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555050565b600073ffffffffffffffffffffffffffffffffffffffff166000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415610547576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f4261726e206e6f74206f776e656400000000000000000000000000000000000081525060200191505060405180910390fd5b6001600260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550565b600a81565b6000600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905090565b6060600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080548060200260200160405190810160405280929190818152602001828054801561070257602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116106b8575b5050505050905090565b600073ffffffffffffffffffffffffffffffffffffffff166000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461080c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260128152602001807f4261726e20616c7265616479206f776e6564000000000000000000000000000081525060200191505060405180910390fd5b6000600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080549050111561096257600a60ff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610910576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260148152602001807f4e6f7420656e6f75676820676f6c64206567677300000000000000000000000081525060200191505060405180910390fd5b600a60ff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055505b336000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505056fea165627a7a7230582041604f962eb0d6e70ff473861d7b805f5a85f591bcd338df576813ea029e97b80029",
+  "sourceMap": "25:1700:1:-;;;257:23;8:9:-1;5:2;;;30:1;27;20:12;5:2;257:23:1;25:1700;;;;;;",
+  "deployedSourceMap": "25:1700:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:1700:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1200:290;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1200:290:1;;;;;;;;;;;;;;;;;:::i;:::-;;970:224;;;:::i;:::-;;63:45;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1616:107;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1496:114;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1496:114:1;;;;;;;;;;;;;;;;;286:678;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;286:678:1;;;;;;;;;;;;;;;;;;;:::i;:::-;;1200:290;1301:1;1264:39;;:13;:25;1278:10;1264:25;;;;;;;;;;;;;;;;;;;;;;;;;:39;;;;1256:66;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1386:7;1340:15;:42;1356:13;:25;1370:10;1356:25;;;;;;;;;;;;;;;;;;;;;;;;;1340:42;;;;;;;;;;;;;;;;:53;;1332:88;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1476:7;1430:15;:42;1446:13;:25;1460:10;1446:25;;;;;;;;;;;;;;;;;;;;;;;;;1430:42;;;;;;;;;;;;;;;;:53;;;;;;;;;;;1200:290;:::o;970:224::-;1063:1;1026:39;;:13;:25;1040:10;1026:25;;;;;;;;;;;;;;;;;;;;;;;;;:39;;;;1018:66;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1186:1;1140:15;:42;1156:13;:25;1170:10;1156:25;;;;;;;;;;;;;;;;;;;;;;;;;1140:42;;;;;;;;;;;;;;;;:47;;;;;;;;;;;970:224::o;63:45::-;106:2;63:45;:::o;1616:107::-;1666:4;1689:15;:27;1705:10;1689:27;;;;;;;;;;;;;;;;1682:34;;1616:107;:::o;1496:114::-;1544:16;1579:12;:24;1592:10;1579:24;;;;;;;;;;;;;;;1572:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1496:114;:::o;286:678::-;396:1;357:41;;:13;:27;371:12;357:27;;;;;;;;;;;;;;;;;;;;;;;;;:41;;;349:72;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;594:1;560:12;:24;573:10;560:24;;;;;;;;;;;;;;;:31;;;;:35;556:298;;;106:2;619:49;;:15;:27;635:10;619:27;;;;;;;;;;;;;;;;:49;;611:82;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;106:2;794:49;;:15;:27;810:10;794:27;;;;;;;;;;;;;;;;:49;;;;;;;;;;;556:298;894:10;864:13;:27;878:12;864:27;;;;;;;;;;;;;;;;:40;;;;;;;;;;;;;;;;;;914:12;:24;927:10;914:24;;;;;;;;;;;;;;;944:12;914:43;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;914:43:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;286:678;:::o",
+  "source": "pragma solidity ^0.5.8;\n\ncontract BarnRegistrationCenter {\n    uint8 public constant barnCostInGoldEggs = 10;\n\n    mapping(address => address) barnIsOwnedBy;\n    mapping(address => address[]) barnsOwnedBy;\n    mapping(address => uint) goldEggsOwnedBy;\n\n    constructor() public {}\n\n    function registerBarn(address _barnAddress) external {\n        require(barnIsOwnedBy[_barnAddress] == address(0), \"Barn already owned\");\n        // TODO check if it's the expected smart contract bytecode?\n\n        // first barn is free, next ones cost gold eggs\n        if (barnsOwnedBy[msg.sender].length > 0) {\n            require(goldEggsOwnedBy[msg.sender] >= barnCostInGoldEggs, \"Not enough gold eggs\");\n\n            // no need for safe math because we already checked that there are enough\n            goldEggsOwnedBy[msg.sender] -= barnCostInGoldEggs;\n        }\n\n        barnIsOwnedBy[_barnAddress] = msg.sender;\n        barnsOwnedBy[msg.sender].push(_barnAddress);\n    }\n\n    function receiveNewGoldEgg() external {\n        require(barnIsOwnedBy[msg.sender] != address(0), \"Barn not owned\");\n        // should we check if this overflows?\n        goldEggsOwnedBy[barnIsOwnedBy[msg.sender]] += 1;\n    }\n\n    function spendGoldEggs(uint _amount) external {\n        require(barnIsOwnedBy[msg.sender] != address(0), \"Barn not owned\");\n        require(goldEggsOwnedBy[barnIsOwnedBy[msg.sender]] >= _amount, \"No gold eggs available\");\n        goldEggsOwnedBy[barnIsOwnedBy[msg.sender]] -= _amount;\n    }\n\n    function getOwnedBarns() external view returns (address[] memory) {\n        return barnsOwnedBy[msg.sender];\n    }\n\n    function getGoldEggCount() external view returns (uint) {\n        return goldEggsOwnedBy[msg.sender];\n    }\n}\n",
   "sourcePath": "/media/pedro/Files/Pessoal/Projects/chicken-farmer-ethereum/smart-contracts/contracts/BarnRegistrationCenter.sol",
   "ast": {
     "absolutePath": "/media/pedro/Files/Pessoal/Projects/chicken-farmer-ethereum/smart-contracts/contracts/BarnRegistrationCenter.sol",
     "exportedSymbols": {
       "BarnRegistrationCenter": [
-        391
+        508
       ]
     },
-    "id": 392,
+    "id": 509,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 227,
+        "id": 342,
         "literals": [
           "solidity",
           "^",
@@ -116,19 +121,19 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 391,
+        "id": 508,
         "linearizedBaseContracts": [
-          391
+          508
         ],
         "name": "BarnRegistrationCenter",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 230,
+            "id": 345,
             "name": "barnCostInGoldEggs",
             "nodeType": "VariableDeclaration",
-            "scope": 391,
+            "scope": 508,
             "src": "63:45:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -137,7 +142,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 228,
+              "id": 343,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "63:5:1",
@@ -149,7 +154,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3130",
-              "id": 229,
+              "id": 344,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -168,10 +173,10 @@
           },
           {
             "constant": false,
-            "id": 234,
+            "id": 349,
             "name": "barnIsOwnedBy",
             "nodeType": "VariableDeclaration",
-            "scope": 391,
+            "scope": 508,
             "src": "115:41:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -180,9 +185,9 @@
               "typeString": "mapping(address => address)"
             },
             "typeName": {
-              "id": 233,
+              "id": 348,
               "keyType": {
-                "id": 231,
+                "id": 346,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "123:7:1",
@@ -198,7 +203,7 @@
                 "typeString": "mapping(address => address)"
               },
               "valueType": {
-                "id": 232,
+                "id": 347,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "134:7:1",
@@ -214,10 +219,10 @@
           },
           {
             "constant": false,
-            "id": 239,
+            "id": 354,
             "name": "barnsOwnedBy",
             "nodeType": "VariableDeclaration",
-            "scope": 391,
+            "scope": 508,
             "src": "162:42:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -226,9 +231,9 @@
               "typeString": "mapping(address => address[])"
             },
             "typeName": {
-              "id": 238,
+              "id": 353,
               "keyType": {
-                "id": 235,
+                "id": 350,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "170:7:1",
@@ -245,7 +250,7 @@
               },
               "valueType": {
                 "baseType": {
-                  "id": 236,
+                  "id": 351,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "181:7:1",
@@ -255,7 +260,7 @@
                     "typeString": "address"
                   }
                 },
-                "id": 237,
+                "id": 352,
                 "length": null,
                 "nodeType": "ArrayTypeName",
                 "src": "181:9:1",
@@ -270,10 +275,10 @@
           },
           {
             "constant": false,
-            "id": 243,
+            "id": 358,
             "name": "goldEggsOwnedBy",
             "nodeType": "VariableDeclaration",
-            "scope": 391,
+            "scope": 508,
             "src": "210:40:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -282,9 +287,9 @@
               "typeString": "mapping(address => uint256)"
             },
             "typeName": {
-              "id": 242,
+              "id": 357,
               "keyType": {
-                "id": 240,
+                "id": 355,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "218:7:1",
@@ -300,7 +305,7 @@
                 "typeString": "mapping(address => uint256)"
               },
               "valueType": {
-                "id": 241,
+                "id": 356,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "229:4:1",
@@ -315,31 +320,31 @@
           },
           {
             "body": {
-              "id": 246,
+              "id": 361,
               "nodeType": "Block",
               "src": "278:2:1",
               "statements": []
             },
             "documentation": null,
-            "id": 247,
+            "id": 362,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 244,
+              "id": 359,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "268:2:1"
             },
             "returnParameters": {
-              "id": 245,
+              "id": 360,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "278:0:1"
             },
-            "scope": 391,
+            "scope": 508,
             "src": "257:23:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -347,7 +352,7 @@
           },
           {
             "body": {
-              "id": 304,
+              "id": 419,
               "nodeType": "Block",
               "src": "339:625:1",
               "statements": [
@@ -361,7 +366,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 259,
+                        "id": 374,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -370,25 +375,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 253,
+                            "id": 368,
                             "name": "barnIsOwnedBy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 234,
+                            "referencedDeclaration": 349,
                             "src": "357:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                               "typeString": "mapping(address => address)"
                             }
                           },
-                          "id": 255,
+                          "id": 370,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 254,
+                            "id": 369,
                             "name": "_barnAddress",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 249,
+                            "referencedDeclaration": 364,
                             "src": "371:12:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -414,7 +419,7 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 257,
+                              "id": 372,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -437,7 +442,7 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 256,
+                            "id": 371,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -450,7 +455,7 @@
                             },
                             "typeName": "address"
                           },
-                          "id": 258,
+                          "id": 373,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -473,7 +478,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4261726e20616c7265616479206f776e6564",
-                        "id": 260,
+                        "id": 375,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -500,21 +505,21 @@
                           "typeString": "literal_string \"Barn already owned\""
                         }
                       ],
-                      "id": 252,
+                      "id": 367,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        466,
-                        467
+                        583,
+                        584
                       ],
-                      "referencedDeclaration": 467,
+                      "referencedDeclaration": 584,
                       "src": "349:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 261,
+                    "id": 376,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -528,7 +533,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 262,
+                  "id": 377,
                   "nodeType": "ExpressionStatement",
                   "src": "349:72:1"
                 },
@@ -539,7 +544,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 269,
+                    "id": 384,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -550,34 +555,34 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 263,
+                          "id": 378,
                           "name": "barnsOwnedBy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 239,
+                          "referencedDeclaration": 354,
                           "src": "560:12:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_address_$dyn_storage_$",
                             "typeString": "mapping(address => address[] storage ref)"
                           }
                         },
-                        "id": 266,
+                        "id": 381,
                         "indexExpression": {
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 264,
+                            "id": 379,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 463,
+                            "referencedDeclaration": 580,
                             "src": "573:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 265,
+                          "id": 380,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -602,7 +607,7 @@
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 267,
+                      "id": 382,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -621,7 +626,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "30",
-                      "id": 268,
+                      "id": 383,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -643,11 +648,11 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 288,
+                  "id": 403,
                   "nodeType": "IfStatement",
                   "src": "556:298:1",
                   "trueBody": {
-                    "id": 287,
+                    "id": 402,
                     "nodeType": "Block",
                     "src": "597:257:1",
                     "statements": [
@@ -661,7 +666,7 @@
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 276,
+                              "id": 391,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -670,34 +675,34 @@
                                 "argumentTypes": null,
                                 "baseExpression": {
                                   "argumentTypes": null,
-                                  "id": 271,
+                                  "id": 386,
                                   "name": "goldEggsOwnedBy",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 243,
+                                  "referencedDeclaration": 358,
                                   "src": "619:15:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                     "typeString": "mapping(address => uint256)"
                                   }
                                 },
-                                "id": 274,
+                                "id": 389,
                                 "indexExpression": {
                                   "argumentTypes": null,
                                   "expression": {
                                     "argumentTypes": null,
-                                    "id": 272,
+                                    "id": 387,
                                     "name": "msg",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 463,
+                                    "referencedDeclaration": 580,
                                     "src": "635:3:1",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_magic_message",
                                       "typeString": "msg"
                                     }
                                   },
-                                  "id": 273,
+                                  "id": 388,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -726,11 +731,11 @@
                               "operator": ">=",
                               "rightExpression": {
                                 "argumentTypes": null,
-                                "id": 275,
+                                "id": 390,
                                 "name": "barnCostInGoldEggs",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 230,
+                                "referencedDeclaration": 345,
                                 "src": "650:18:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint8",
@@ -746,7 +751,7 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "4e6f7420656e6f75676820676f6c642065676773",
-                              "id": 277,
+                              "id": 392,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -773,21 +778,21 @@
                                 "typeString": "literal_string \"Not enough gold eggs\""
                               }
                             ],
-                            "id": 270,
+                            "id": 385,
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              466,
-                              467
+                              583,
+                              584
                             ],
-                            "referencedDeclaration": 467,
+                            "referencedDeclaration": 584,
                             "src": "611:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                               "typeString": "function (bool,string memory) pure"
                             }
                           },
-                          "id": 278,
+                          "id": 393,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -801,14 +806,14 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 279,
+                        "id": 394,
                         "nodeType": "ExpressionStatement",
                         "src": "611:82:1"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 285,
+                          "id": 400,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -817,34 +822,34 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 280,
+                              "id": 395,
                               "name": "goldEggsOwnedBy",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 243,
+                              "referencedDeclaration": 358,
                               "src": "794:15:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                 "typeString": "mapping(address => uint256)"
                               }
                             },
-                            "id": 283,
+                            "id": 398,
                             "indexExpression": {
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 281,
+                                "id": 396,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 463,
+                                "referencedDeclaration": 580,
                                 "src": "810:3:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 282,
+                              "id": 397,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -873,11 +878,11 @@
                           "operator": "-=",
                           "rightHandSide": {
                             "argumentTypes": null,
-                            "id": 284,
+                            "id": 399,
                             "name": "barnCostInGoldEggs",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 230,
+                            "referencedDeclaration": 345,
                             "src": "825:18:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint8",
@@ -890,7 +895,7 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 286,
+                        "id": 401,
                         "nodeType": "ExpressionStatement",
                         "src": "794:49:1"
                       }
@@ -900,7 +905,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 294,
+                    "id": 409,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -909,25 +914,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 289,
+                        "id": 404,
                         "name": "barnIsOwnedBy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 234,
+                        "referencedDeclaration": 349,
                         "src": "864:13:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                           "typeString": "mapping(address => address)"
                         }
                       },
-                      "id": 291,
+                      "id": 406,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 290,
+                        "id": 405,
                         "name": "_barnAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 249,
+                        "referencedDeclaration": 364,
                         "src": "878:12:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -951,18 +956,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 292,
+                        "id": 407,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 463,
+                        "referencedDeclaration": 580,
                         "src": "894:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 293,
+                      "id": 408,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -982,7 +987,7 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 295,
+                  "id": 410,
                   "nodeType": "ExpressionStatement",
                   "src": "864:40:1"
                 },
@@ -992,11 +997,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 301,
+                        "id": 416,
                         "name": "_barnAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 249,
+                        "referencedDeclaration": 364,
                         "src": "944:12:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1015,34 +1020,34 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 296,
+                          "id": 411,
                           "name": "barnsOwnedBy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 239,
+                          "referencedDeclaration": 354,
                           "src": "914:12:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_address_$dyn_storage_$",
                             "typeString": "mapping(address => address[] storage ref)"
                           }
                         },
-                        "id": 299,
+                        "id": 414,
                         "indexExpression": {
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 297,
+                            "id": 412,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 463,
+                            "referencedDeclaration": 580,
                             "src": "927:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 298,
+                          "id": 413,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1067,7 +1072,7 @@
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 300,
+                      "id": 415,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1081,7 +1086,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 302,
+                    "id": 417,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1095,29 +1100,29 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 303,
+                  "id": 418,
                   "nodeType": "ExpressionStatement",
                   "src": "914:43:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 305,
+            "id": 420,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "registerBarn",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 250,
+              "id": 365,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 249,
+                  "id": 364,
                   "name": "_barnAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 305,
+                  "scope": 420,
                   "src": "308:20:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1126,7 +1131,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 248,
+                    "id": 363,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "308:7:1",
@@ -1143,12 +1148,12 @@
               "src": "307:22:1"
             },
             "returnParameters": {
-              "id": 251,
+              "id": 366,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "339:0:1"
             },
-            "scope": 391,
+            "scope": 508,
             "src": "286:678:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1156,7 +1161,7 @@
           },
           {
             "body": {
-              "id": 329,
+              "id": 444,
               "nodeType": "Block",
               "src": "1008:186:1",
               "statements": [
@@ -1170,7 +1175,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 316,
+                        "id": 431,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1179,34 +1184,34 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 309,
+                            "id": 424,
                             "name": "barnIsOwnedBy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 234,
+                            "referencedDeclaration": 349,
                             "src": "1026:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                               "typeString": "mapping(address => address)"
                             }
                           },
-                          "id": 312,
+                          "id": 427,
                           "indexExpression": {
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 310,
+                              "id": 425,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 463,
+                              "referencedDeclaration": 580,
                               "src": "1040:3:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 311,
+                            "id": 426,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1239,7 +1244,7 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 314,
+                              "id": 429,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -1262,7 +1267,7 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 313,
+                            "id": 428,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1275,7 +1280,7 @@
                             },
                             "typeName": "address"
                           },
-                          "id": 315,
+                          "id": 430,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -1298,7 +1303,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4261726e206e6f74206f776e6564",
-                        "id": 317,
+                        "id": 432,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1325,21 +1330,21 @@
                           "typeString": "literal_string \"Barn not owned\""
                         }
                       ],
-                      "id": 308,
+                      "id": 423,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        466,
-                        467
+                        583,
+                        584
                       ],
-                      "referencedDeclaration": 467,
+                      "referencedDeclaration": 584,
                       "src": "1018:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 318,
+                    "id": 433,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1353,14 +1358,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 319,
+                  "id": 434,
                   "nodeType": "ExpressionStatement",
                   "src": "1018:66:1"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 327,
+                    "id": 442,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1369,50 +1374,50 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 320,
+                        "id": 435,
                         "name": "goldEggsOwnedBy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 243,
+                        "referencedDeclaration": 358,
                         "src": "1140:15:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                           "typeString": "mapping(address => uint256)"
                         }
                       },
-                      "id": 325,
+                      "id": 440,
                       "indexExpression": {
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 321,
+                          "id": 436,
                           "name": "barnIsOwnedBy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 234,
+                          "referencedDeclaration": 349,
                           "src": "1156:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                             "typeString": "mapping(address => address)"
                           }
                         },
-                        "id": 324,
+                        "id": 439,
                         "indexExpression": {
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 322,
+                            "id": 437,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 463,
+                            "referencedDeclaration": 580,
                             "src": "1170:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 323,
+                          "id": 438,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1453,7 +1458,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "31",
-                      "id": 326,
+                      "id": 441,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1474,32 +1479,32 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 328,
+                  "id": 443,
                   "nodeType": "ExpressionStatement",
                   "src": "1140:47:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 330,
+            "id": 445,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "receiveNewGoldEgg",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 306,
+              "id": 421,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "996:2:1"
             },
             "returnParameters": {
-              "id": 307,
+              "id": 422,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1008:0:1"
             },
-            "scope": 391,
+            "scope": 508,
             "src": "970:224:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1507,9 +1512,9 @@
           },
           {
             "body": {
-              "id": 366,
+              "id": 483,
               "nodeType": "Block",
-              "src": "1233:232:1",
+              "src": "1246:244:1",
               "statements": [
                 {
                   "expression": {
@@ -1521,7 +1526,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 341,
+                        "id": 458,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1530,34 +1535,34 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 334,
+                            "id": 451,
                             "name": "barnIsOwnedBy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 234,
-                            "src": "1251:13:1",
+                            "referencedDeclaration": 349,
+                            "src": "1264:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                               "typeString": "mapping(address => address)"
                             }
                           },
-                          "id": 337,
+                          "id": 454,
                           "indexExpression": {
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 335,
+                              "id": 452,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 463,
-                              "src": "1265:3:1",
+                              "referencedDeclaration": 580,
+                              "src": "1278:3:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 336,
+                            "id": 453,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1565,7 +1570,7 @@
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "1265:10:1",
+                            "src": "1278:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address_payable",
                               "typeString": "address payable"
@@ -1576,7 +1581,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "1251:25:1",
+                          "src": "1264:25:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -1590,14 +1595,14 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 339,
+                              "id": 456,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "1288:1:1",
+                              "src": "1301:1:1",
                               "subdenomination": null,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
@@ -1613,20 +1618,20 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 338,
+                            "id": 455,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "1280:7:1",
+                            "src": "1293:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_address_$",
                               "typeString": "type(address)"
                             },
                             "typeName": "address"
                           },
-                          "id": 340,
+                          "id": 457,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -1634,13 +1639,13 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1280:10:1",
+                          "src": "1293:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
                           }
                         },
-                        "src": "1251:39:1",
+                        "src": "1264:39:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1649,14 +1654,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4261726e206e6f74206f776e6564",
-                        "id": 342,
+                        "id": 459,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1292:16:1",
+                        "src": "1305:16:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_fd786ba1671606681f388f22cd50fe4930030361f96ceac634897370ac88b6bf",
@@ -1676,21 +1681,21 @@
                           "typeString": "literal_string \"Barn not owned\""
                         }
                       ],
-                      "id": 333,
+                      "id": 450,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        466,
-                        467
+                        583,
+                        584
                       ],
-                      "referencedDeclaration": 467,
-                      "src": "1243:7:1",
+                      "referencedDeclaration": 584,
+                      "src": "1256:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 343,
+                    "id": 460,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1698,15 +1703,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1243:66:1",
+                    "src": "1256:66:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 344,
+                  "id": 461,
                   "nodeType": "ExpressionStatement",
-                  "src": "1243:66:1"
+                  "src": "1256:66:1"
                 },
                 {
                   "expression": {
@@ -1718,7 +1723,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 353,
+                        "id": 470,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1727,50 +1732,50 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 346,
+                            "id": 463,
                             "name": "goldEggsOwnedBy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 243,
-                            "src": "1327:15:1",
+                            "referencedDeclaration": 358,
+                            "src": "1340:15:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                               "typeString": "mapping(address => uint256)"
                             }
                           },
-                          "id": 351,
+                          "id": 468,
                           "indexExpression": {
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 347,
+                              "id": 464,
                               "name": "barnIsOwnedBy",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 234,
-                              "src": "1343:13:1",
+                              "referencedDeclaration": 349,
+                              "src": "1356:13:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                                 "typeString": "mapping(address => address)"
                               }
                             },
-                            "id": 350,
+                            "id": 467,
                             "indexExpression": {
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 348,
+                                "id": 465,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 463,
-                                "src": "1357:3:1",
+                                "referencedDeclaration": 580,
+                                "src": "1370:3:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 349,
+                              "id": 466,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -1778,7 +1783,7 @@
                               "memberName": "sender",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": null,
-                              "src": "1357:10:1",
+                              "src": "1370:10:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address_payable",
                                 "typeString": "address payable"
@@ -1789,7 +1794,7 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "1343:25:1",
+                            "src": "1356:25:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -1800,7 +1805,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "1327:42:1",
+                          "src": "1340:42:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1810,23 +1815,18 @@
                         "operator": ">=",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "hexValue": "31",
-                          "id": 352,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": true,
-                          "kind": "number",
-                          "lValueRequested": false,
-                          "nodeType": "Literal",
-                          "src": "1373:1:1",
-                          "subdenomination": null,
+                          "id": 469,
+                          "name": "_amount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 447,
+                          "src": "1386:7:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_rational_1_by_1",
-                            "typeString": "int_const 1"
-                          },
-                          "value": "1"
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
                         },
-                        "src": "1327:47:1",
+                        "src": "1340:53:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1835,14 +1835,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4e6f20676f6c64206567677320617661696c61626c65",
-                        "id": 354,
+                        "id": 471,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1376:24:1",
+                        "src": "1395:24:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_2cae33c630151e0da19cb1eb0214aa43011f76fd8cfe274dfd3437fc5ac6d556",
@@ -1862,21 +1862,21 @@
                           "typeString": "literal_string \"No gold eggs available\""
                         }
                       ],
-                      "id": 345,
+                      "id": 462,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        466,
-                        467
+                        583,
+                        584
                       ],
-                      "referencedDeclaration": 467,
-                      "src": "1319:7:1",
+                      "referencedDeclaration": 584,
+                      "src": "1332:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 355,
+                    "id": 472,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1884,20 +1884,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1319:82:1",
+                    "src": "1332:88:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 356,
+                  "id": 473,
                   "nodeType": "ExpressionStatement",
-                  "src": "1319:82:1"
+                  "src": "1332:88:1"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 364,
+                    "id": 481,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1906,50 +1906,50 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 357,
+                        "id": 474,
                         "name": "goldEggsOwnedBy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 243,
-                        "src": "1411:15:1",
+                        "referencedDeclaration": 358,
+                        "src": "1430:15:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                           "typeString": "mapping(address => uint256)"
                         }
                       },
-                      "id": 362,
+                      "id": 479,
                       "indexExpression": {
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 358,
+                          "id": 475,
                           "name": "barnIsOwnedBy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 234,
-                          "src": "1427:13:1",
+                          "referencedDeclaration": 349,
+                          "src": "1446:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                             "typeString": "mapping(address => address)"
                           }
                         },
-                        "id": 361,
+                        "id": 478,
                         "indexExpression": {
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 359,
+                            "id": 476,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 463,
-                            "src": "1441:3:1",
+                            "referencedDeclaration": 580,
+                            "src": "1460:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 360,
+                          "id": 477,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1957,7 +1957,7 @@
                           "memberName": "sender",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "1441:10:1",
+                          "src": "1460:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
@@ -1968,7 +1968,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "1427:25:1",
+                        "src": "1446:25:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1979,7 +1979,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1411:42:1",
+                      "src": "1430:42:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1989,98 +1989,120 @@
                     "operator": "-=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "31",
-                      "id": 363,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": true,
-                      "kind": "number",
-                      "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "1457:1:1",
-                      "subdenomination": null,
+                      "id": 480,
+                      "name": "_amount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 447,
+                      "src": "1476:7:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_1_by_1",
-                        "typeString": "int_const 1"
-                      },
-                      "value": "1"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "src": "1411:47:1",
+                    "src": "1430:53:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 365,
+                  "id": 482,
                   "nodeType": "ExpressionStatement",
-                  "src": "1411:47:1"
+                  "src": "1430:53:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 367,
+            "id": 484,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "spendGoldEgg",
+            "name": "spendGoldEggs",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 331,
+              "id": 448,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1221:2:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 447,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 484,
+                  "src": "1223:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 446,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1223:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1222:14:1"
             },
             "returnParameters": {
-              "id": 332,
+              "id": 449,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1233:0:1"
+              "src": "1246:0:1"
             },
-            "scope": 391,
-            "src": "1200:265:1",
+            "scope": 508,
+            "src": "1200:290:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 378,
+              "id": 495,
               "nodeType": "Block",
-              "src": "1535:48:1",
+              "src": "1562:48:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 373,
+                      "id": 490,
                       "name": "barnsOwnedBy",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 239,
-                      "src": "1552:12:1",
+                      "referencedDeclaration": 354,
+                      "src": "1579:12:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_address_$dyn_storage_$",
                         "typeString": "mapping(address => address[] storage ref)"
                       }
                     },
-                    "id": 376,
+                    "id": 493,
                     "indexExpression": {
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 374,
+                        "id": 491,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 463,
-                        "src": "1565:3:1",
+                        "referencedDeclaration": 580,
+                        "src": "1592:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 375,
+                      "id": 492,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2088,7 +2110,7 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "1565:10:1",
+                      "src": "1592:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
@@ -2099,43 +2121,43 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "1552:24:1",
+                    "src": "1579:24:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage",
                       "typeString": "address[] storage ref"
                     }
                   },
-                  "functionReturnParameters": 372,
-                  "id": 377,
+                  "functionReturnParameters": 489,
+                  "id": 494,
                   "nodeType": "Return",
-                  "src": "1545:31:1"
+                  "src": "1572:31:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 379,
+            "id": 496,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getOwnedBarns",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 368,
+              "id": 485,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1493:2:1"
+              "src": "1518:2:1"
             },
             "returnParameters": {
-              "id": 372,
+              "id": 489,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 371,
+                  "id": 488,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 379,
-                  "src": "1517:16:1",
+                  "scope": 496,
+                  "src": "1544:16:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2144,20 +2166,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 369,
+                      "id": 486,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1517:7:1",
+                      "src": "1544:7:1",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 370,
+                    "id": 487,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1517:9:1",
+                    "src": "1544:9:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -2167,53 +2189,53 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1516:18:1"
+              "src": "1543:18:1"
             },
-            "scope": 391,
-            "src": "1471:112:1",
+            "scope": 508,
+            "src": "1496:114:1",
             "stateMutability": "view",
             "superFunction": null,
-            "visibility": "public"
+            "visibility": "external"
           },
           {
             "body": {
-              "id": 389,
+              "id": 506,
               "nodeType": "Block",
-              "src": "1643:51:1",
+              "src": "1672:51:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 384,
+                      "id": 501,
                       "name": "goldEggsOwnedBy",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 243,
-                      "src": "1660:15:1",
+                      "referencedDeclaration": 358,
+                      "src": "1689:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                         "typeString": "mapping(address => uint256)"
                       }
                     },
-                    "id": 387,
+                    "id": 504,
                     "indexExpression": {
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 385,
+                        "id": 502,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 463,
-                        "src": "1676:3:1",
+                        "referencedDeclaration": 580,
+                        "src": "1705:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 386,
+                      "id": 503,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2221,7 +2243,7 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "1676:10:1",
+                      "src": "1705:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
@@ -2232,43 +2254,43 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "1660:27:1",
+                    "src": "1689:27:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 383,
-                  "id": 388,
+                  "functionReturnParameters": 500,
+                  "id": 505,
                   "nodeType": "Return",
-                  "src": "1653:34:1"
+                  "src": "1682:34:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 390,
+            "id": 507,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getGoldEggCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 380,
+              "id": 497,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1613:2:1"
+              "src": "1640:2:1"
             },
             "returnParameters": {
-              "id": 383,
+              "id": 500,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 382,
+                  "id": 499,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 390,
-                  "src": "1637:4:1",
+                  "scope": 507,
+                  "src": "1666:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2276,10 +2298,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 381,
+                    "id": 498,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1637:4:1",
+                    "src": "1666:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2289,33 +2311,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1636:6:1"
+              "src": "1665:6:1"
             },
-            "scope": 391,
-            "src": "1589:105:1",
+            "scope": 508,
+            "src": "1616:107:1",
             "stateMutability": "view",
             "superFunction": null,
-            "visibility": "public"
+            "visibility": "external"
           }
         ],
-        "scope": 392,
-        "src": "25:1671:1"
+        "scope": 509,
+        "src": "25:1700:1"
       }
     ],
-    "src": "0:1697:1"
+    "src": "0:1726:1"
   },
   "legacyAST": {
     "absolutePath": "/media/pedro/Files/Pessoal/Projects/chicken-farmer-ethereum/smart-contracts/contracts/BarnRegistrationCenter.sol",
     "exportedSymbols": {
       "BarnRegistrationCenter": [
-        391
+        508
       ]
     },
-    "id": 392,
+    "id": 509,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 227,
+        "id": 342,
         "literals": [
           "solidity",
           "^",
@@ -2331,19 +2353,19 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 391,
+        "id": 508,
         "linearizedBaseContracts": [
-          391
+          508
         ],
         "name": "BarnRegistrationCenter",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 230,
+            "id": 345,
             "name": "barnCostInGoldEggs",
             "nodeType": "VariableDeclaration",
-            "scope": 391,
+            "scope": 508,
             "src": "63:45:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2352,7 +2374,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 228,
+              "id": 343,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "63:5:1",
@@ -2364,7 +2386,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3130",
-              "id": 229,
+              "id": 344,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -2383,10 +2405,10 @@
           },
           {
             "constant": false,
-            "id": 234,
+            "id": 349,
             "name": "barnIsOwnedBy",
             "nodeType": "VariableDeclaration",
-            "scope": 391,
+            "scope": 508,
             "src": "115:41:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2395,9 +2417,9 @@
               "typeString": "mapping(address => address)"
             },
             "typeName": {
-              "id": 233,
+              "id": 348,
               "keyType": {
-                "id": 231,
+                "id": 346,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "123:7:1",
@@ -2413,7 +2435,7 @@
                 "typeString": "mapping(address => address)"
               },
               "valueType": {
-                "id": 232,
+                "id": 347,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "134:7:1",
@@ -2429,10 +2451,10 @@
           },
           {
             "constant": false,
-            "id": 239,
+            "id": 354,
             "name": "barnsOwnedBy",
             "nodeType": "VariableDeclaration",
-            "scope": 391,
+            "scope": 508,
             "src": "162:42:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2441,9 +2463,9 @@
               "typeString": "mapping(address => address[])"
             },
             "typeName": {
-              "id": 238,
+              "id": 353,
               "keyType": {
-                "id": 235,
+                "id": 350,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "170:7:1",
@@ -2460,7 +2482,7 @@
               },
               "valueType": {
                 "baseType": {
-                  "id": 236,
+                  "id": 351,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "181:7:1",
@@ -2470,7 +2492,7 @@
                     "typeString": "address"
                   }
                 },
-                "id": 237,
+                "id": 352,
                 "length": null,
                 "nodeType": "ArrayTypeName",
                 "src": "181:9:1",
@@ -2485,10 +2507,10 @@
           },
           {
             "constant": false,
-            "id": 243,
+            "id": 358,
             "name": "goldEggsOwnedBy",
             "nodeType": "VariableDeclaration",
-            "scope": 391,
+            "scope": 508,
             "src": "210:40:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2497,9 +2519,9 @@
               "typeString": "mapping(address => uint256)"
             },
             "typeName": {
-              "id": 242,
+              "id": 357,
               "keyType": {
-                "id": 240,
+                "id": 355,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "218:7:1",
@@ -2515,7 +2537,7 @@
                 "typeString": "mapping(address => uint256)"
               },
               "valueType": {
-                "id": 241,
+                "id": 356,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "229:4:1",
@@ -2530,31 +2552,31 @@
           },
           {
             "body": {
-              "id": 246,
+              "id": 361,
               "nodeType": "Block",
               "src": "278:2:1",
               "statements": []
             },
             "documentation": null,
-            "id": 247,
+            "id": 362,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 244,
+              "id": 359,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "268:2:1"
             },
             "returnParameters": {
-              "id": 245,
+              "id": 360,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "278:0:1"
             },
-            "scope": 391,
+            "scope": 508,
             "src": "257:23:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2562,7 +2584,7 @@
           },
           {
             "body": {
-              "id": 304,
+              "id": 419,
               "nodeType": "Block",
               "src": "339:625:1",
               "statements": [
@@ -2576,7 +2598,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 259,
+                        "id": 374,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2585,25 +2607,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 253,
+                            "id": 368,
                             "name": "barnIsOwnedBy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 234,
+                            "referencedDeclaration": 349,
                             "src": "357:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                               "typeString": "mapping(address => address)"
                             }
                           },
-                          "id": 255,
+                          "id": 370,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 254,
+                            "id": 369,
                             "name": "_barnAddress",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 249,
+                            "referencedDeclaration": 364,
                             "src": "371:12:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -2629,7 +2651,7 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 257,
+                              "id": 372,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -2652,7 +2674,7 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 256,
+                            "id": 371,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2665,7 +2687,7 @@
                             },
                             "typeName": "address"
                           },
-                          "id": 258,
+                          "id": 373,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -2688,7 +2710,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4261726e20616c7265616479206f776e6564",
-                        "id": 260,
+                        "id": 375,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -2715,21 +2737,21 @@
                           "typeString": "literal_string \"Barn already owned\""
                         }
                       ],
-                      "id": 252,
+                      "id": 367,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        466,
-                        467
+                        583,
+                        584
                       ],
-                      "referencedDeclaration": 467,
+                      "referencedDeclaration": 584,
                       "src": "349:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 261,
+                    "id": 376,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2743,7 +2765,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 262,
+                  "id": 377,
                   "nodeType": "ExpressionStatement",
                   "src": "349:72:1"
                 },
@@ -2754,7 +2776,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 269,
+                    "id": 384,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2765,34 +2787,34 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 263,
+                          "id": 378,
                           "name": "barnsOwnedBy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 239,
+                          "referencedDeclaration": 354,
                           "src": "560:12:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_address_$dyn_storage_$",
                             "typeString": "mapping(address => address[] storage ref)"
                           }
                         },
-                        "id": 266,
+                        "id": 381,
                         "indexExpression": {
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 264,
+                            "id": 379,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 463,
+                            "referencedDeclaration": 580,
                             "src": "573:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 265,
+                          "id": 380,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2817,7 +2839,7 @@
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 267,
+                      "id": 382,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -2836,7 +2858,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "30",
-                      "id": 268,
+                      "id": 383,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2858,11 +2880,11 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 288,
+                  "id": 403,
                   "nodeType": "IfStatement",
                   "src": "556:298:1",
                   "trueBody": {
-                    "id": 287,
+                    "id": 402,
                     "nodeType": "Block",
                     "src": "597:257:1",
                     "statements": [
@@ -2876,7 +2898,7 @@
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 276,
+                              "id": 391,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -2885,34 +2907,34 @@
                                 "argumentTypes": null,
                                 "baseExpression": {
                                   "argumentTypes": null,
-                                  "id": 271,
+                                  "id": 386,
                                   "name": "goldEggsOwnedBy",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 243,
+                                  "referencedDeclaration": 358,
                                   "src": "619:15:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                     "typeString": "mapping(address => uint256)"
                                   }
                                 },
-                                "id": 274,
+                                "id": 389,
                                 "indexExpression": {
                                   "argumentTypes": null,
                                   "expression": {
                                     "argumentTypes": null,
-                                    "id": 272,
+                                    "id": 387,
                                     "name": "msg",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 463,
+                                    "referencedDeclaration": 580,
                                     "src": "635:3:1",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_magic_message",
                                       "typeString": "msg"
                                     }
                                   },
-                                  "id": 273,
+                                  "id": 388,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -2941,11 +2963,11 @@
                               "operator": ">=",
                               "rightExpression": {
                                 "argumentTypes": null,
-                                "id": 275,
+                                "id": 390,
                                 "name": "barnCostInGoldEggs",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 230,
+                                "referencedDeclaration": 345,
                                 "src": "650:18:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint8",
@@ -2961,7 +2983,7 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "4e6f7420656e6f75676820676f6c642065676773",
-                              "id": 277,
+                              "id": 392,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -2988,21 +3010,21 @@
                                 "typeString": "literal_string \"Not enough gold eggs\""
                               }
                             ],
-                            "id": 270,
+                            "id": 385,
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              466,
-                              467
+                              583,
+                              584
                             ],
-                            "referencedDeclaration": 467,
+                            "referencedDeclaration": 584,
                             "src": "611:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                               "typeString": "function (bool,string memory) pure"
                             }
                           },
-                          "id": 278,
+                          "id": 393,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3016,14 +3038,14 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 279,
+                        "id": 394,
                         "nodeType": "ExpressionStatement",
                         "src": "611:82:1"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 285,
+                          "id": 400,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3032,34 +3054,34 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 280,
+                              "id": 395,
                               "name": "goldEggsOwnedBy",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 243,
+                              "referencedDeclaration": 358,
                               "src": "794:15:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                 "typeString": "mapping(address => uint256)"
                               }
                             },
-                            "id": 283,
+                            "id": 398,
                             "indexExpression": {
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 281,
+                                "id": 396,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 463,
+                                "referencedDeclaration": 580,
                                 "src": "810:3:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 282,
+                              "id": 397,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -3088,11 +3110,11 @@
                           "operator": "-=",
                           "rightHandSide": {
                             "argumentTypes": null,
-                            "id": 284,
+                            "id": 399,
                             "name": "barnCostInGoldEggs",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 230,
+                            "referencedDeclaration": 345,
                             "src": "825:18:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint8",
@@ -3105,7 +3127,7 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 286,
+                        "id": 401,
                         "nodeType": "ExpressionStatement",
                         "src": "794:49:1"
                       }
@@ -3115,7 +3137,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 294,
+                    "id": 409,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3124,25 +3146,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 289,
+                        "id": 404,
                         "name": "barnIsOwnedBy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 234,
+                        "referencedDeclaration": 349,
                         "src": "864:13:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                           "typeString": "mapping(address => address)"
                         }
                       },
-                      "id": 291,
+                      "id": 406,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 290,
+                        "id": 405,
                         "name": "_barnAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 249,
+                        "referencedDeclaration": 364,
                         "src": "878:12:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -3166,18 +3188,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 292,
+                        "id": 407,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 463,
+                        "referencedDeclaration": 580,
                         "src": "894:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 293,
+                      "id": 408,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3197,7 +3219,7 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 295,
+                  "id": 410,
                   "nodeType": "ExpressionStatement",
                   "src": "864:40:1"
                 },
@@ -3207,11 +3229,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 301,
+                        "id": 416,
                         "name": "_barnAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 249,
+                        "referencedDeclaration": 364,
                         "src": "944:12:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -3230,34 +3252,34 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 296,
+                          "id": 411,
                           "name": "barnsOwnedBy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 239,
+                          "referencedDeclaration": 354,
                           "src": "914:12:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_address_$dyn_storage_$",
                             "typeString": "mapping(address => address[] storage ref)"
                           }
                         },
-                        "id": 299,
+                        "id": 414,
                         "indexExpression": {
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 297,
+                            "id": 412,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 463,
+                            "referencedDeclaration": 580,
                             "src": "927:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 298,
+                          "id": 413,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3282,7 +3304,7 @@
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 300,
+                      "id": 415,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3296,7 +3318,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 302,
+                    "id": 417,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3310,29 +3332,29 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 303,
+                  "id": 418,
                   "nodeType": "ExpressionStatement",
                   "src": "914:43:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 305,
+            "id": 420,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "registerBarn",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 250,
+              "id": 365,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 249,
+                  "id": 364,
                   "name": "_barnAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 305,
+                  "scope": 420,
                   "src": "308:20:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3341,7 +3363,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 248,
+                    "id": 363,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "308:7:1",
@@ -3358,12 +3380,12 @@
               "src": "307:22:1"
             },
             "returnParameters": {
-              "id": 251,
+              "id": 366,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "339:0:1"
             },
-            "scope": 391,
+            "scope": 508,
             "src": "286:678:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3371,7 +3393,7 @@
           },
           {
             "body": {
-              "id": 329,
+              "id": 444,
               "nodeType": "Block",
               "src": "1008:186:1",
               "statements": [
@@ -3385,7 +3407,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 316,
+                        "id": 431,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3394,34 +3416,34 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 309,
+                            "id": 424,
                             "name": "barnIsOwnedBy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 234,
+                            "referencedDeclaration": 349,
                             "src": "1026:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                               "typeString": "mapping(address => address)"
                             }
                           },
-                          "id": 312,
+                          "id": 427,
                           "indexExpression": {
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 310,
+                              "id": 425,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 463,
+                              "referencedDeclaration": 580,
                               "src": "1040:3:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 311,
+                            "id": 426,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -3454,7 +3476,7 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 314,
+                              "id": 429,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -3477,7 +3499,7 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 313,
+                            "id": 428,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -3490,7 +3512,7 @@
                             },
                             "typeName": "address"
                           },
-                          "id": 315,
+                          "id": 430,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -3513,7 +3535,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4261726e206e6f74206f776e6564",
-                        "id": 317,
+                        "id": 432,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -3540,21 +3562,21 @@
                           "typeString": "literal_string \"Barn not owned\""
                         }
                       ],
-                      "id": 308,
+                      "id": 423,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        466,
-                        467
+                        583,
+                        584
                       ],
-                      "referencedDeclaration": 467,
+                      "referencedDeclaration": 584,
                       "src": "1018:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 318,
+                    "id": 433,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3568,14 +3590,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 319,
+                  "id": 434,
                   "nodeType": "ExpressionStatement",
                   "src": "1018:66:1"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 327,
+                    "id": 442,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3584,50 +3606,50 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 320,
+                        "id": 435,
                         "name": "goldEggsOwnedBy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 243,
+                        "referencedDeclaration": 358,
                         "src": "1140:15:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                           "typeString": "mapping(address => uint256)"
                         }
                       },
-                      "id": 325,
+                      "id": 440,
                       "indexExpression": {
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 321,
+                          "id": 436,
                           "name": "barnIsOwnedBy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 234,
+                          "referencedDeclaration": 349,
                           "src": "1156:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                             "typeString": "mapping(address => address)"
                           }
                         },
-                        "id": 324,
+                        "id": 439,
                         "indexExpression": {
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 322,
+                            "id": 437,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 463,
+                            "referencedDeclaration": 580,
                             "src": "1170:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 323,
+                          "id": 438,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3668,7 +3690,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "31",
-                      "id": 326,
+                      "id": 441,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -3689,32 +3711,32 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 328,
+                  "id": 443,
                   "nodeType": "ExpressionStatement",
                   "src": "1140:47:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 330,
+            "id": 445,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "receiveNewGoldEgg",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 306,
+              "id": 421,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "996:2:1"
             },
             "returnParameters": {
-              "id": 307,
+              "id": 422,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1008:0:1"
             },
-            "scope": 391,
+            "scope": 508,
             "src": "970:224:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3722,9 +3744,9 @@
           },
           {
             "body": {
-              "id": 366,
+              "id": 483,
               "nodeType": "Block",
-              "src": "1233:232:1",
+              "src": "1246:244:1",
               "statements": [
                 {
                   "expression": {
@@ -3736,7 +3758,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 341,
+                        "id": 458,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3745,34 +3767,34 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 334,
+                            "id": 451,
                             "name": "barnIsOwnedBy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 234,
-                            "src": "1251:13:1",
+                            "referencedDeclaration": 349,
+                            "src": "1264:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                               "typeString": "mapping(address => address)"
                             }
                           },
-                          "id": 337,
+                          "id": 454,
                           "indexExpression": {
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 335,
+                              "id": 452,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 463,
-                              "src": "1265:3:1",
+                              "referencedDeclaration": 580,
+                              "src": "1278:3:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 336,
+                            "id": 453,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -3780,7 +3802,7 @@
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "1265:10:1",
+                            "src": "1278:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address_payable",
                               "typeString": "address payable"
@@ -3791,7 +3813,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "1251:25:1",
+                          "src": "1264:25:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -3805,14 +3827,14 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 339,
+                              "id": 456,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "1288:1:1",
+                              "src": "1301:1:1",
                               "subdenomination": null,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
@@ -3828,20 +3850,20 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 338,
+                            "id": 455,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "1280:7:1",
+                            "src": "1293:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_address_$",
                               "typeString": "type(address)"
                             },
                             "typeName": "address"
                           },
-                          "id": 340,
+                          "id": 457,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -3849,13 +3871,13 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1280:10:1",
+                          "src": "1293:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
                           }
                         },
-                        "src": "1251:39:1",
+                        "src": "1264:39:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3864,14 +3886,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4261726e206e6f74206f776e6564",
-                        "id": 342,
+                        "id": 459,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1292:16:1",
+                        "src": "1305:16:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_fd786ba1671606681f388f22cd50fe4930030361f96ceac634897370ac88b6bf",
@@ -3891,21 +3913,21 @@
                           "typeString": "literal_string \"Barn not owned\""
                         }
                       ],
-                      "id": 333,
+                      "id": 450,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        466,
-                        467
+                        583,
+                        584
                       ],
-                      "referencedDeclaration": 467,
-                      "src": "1243:7:1",
+                      "referencedDeclaration": 584,
+                      "src": "1256:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 343,
+                    "id": 460,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3913,15 +3935,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1243:66:1",
+                    "src": "1256:66:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 344,
+                  "id": 461,
                   "nodeType": "ExpressionStatement",
-                  "src": "1243:66:1"
+                  "src": "1256:66:1"
                 },
                 {
                   "expression": {
@@ -3933,7 +3955,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 353,
+                        "id": 470,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3942,50 +3964,50 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 346,
+                            "id": 463,
                             "name": "goldEggsOwnedBy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 243,
-                            "src": "1327:15:1",
+                            "referencedDeclaration": 358,
+                            "src": "1340:15:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                               "typeString": "mapping(address => uint256)"
                             }
                           },
-                          "id": 351,
+                          "id": 468,
                           "indexExpression": {
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 347,
+                              "id": 464,
                               "name": "barnIsOwnedBy",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 234,
-                              "src": "1343:13:1",
+                              "referencedDeclaration": 349,
+                              "src": "1356:13:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                                 "typeString": "mapping(address => address)"
                               }
                             },
-                            "id": 350,
+                            "id": 467,
                             "indexExpression": {
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 348,
+                                "id": 465,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 463,
-                                "src": "1357:3:1",
+                                "referencedDeclaration": 580,
+                                "src": "1370:3:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 349,
+                              "id": 466,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -3993,7 +4015,7 @@
                               "memberName": "sender",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": null,
-                              "src": "1357:10:1",
+                              "src": "1370:10:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address_payable",
                                 "typeString": "address payable"
@@ -4004,7 +4026,7 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "1343:25:1",
+                            "src": "1356:25:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -4015,7 +4037,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "1327:42:1",
+                          "src": "1340:42:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -4025,23 +4047,18 @@
                         "operator": ">=",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "hexValue": "31",
-                          "id": 352,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": true,
-                          "kind": "number",
-                          "lValueRequested": false,
-                          "nodeType": "Literal",
-                          "src": "1373:1:1",
-                          "subdenomination": null,
+                          "id": 469,
+                          "name": "_amount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 447,
+                          "src": "1386:7:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_rational_1_by_1",
-                            "typeString": "int_const 1"
-                          },
-                          "value": "1"
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
                         },
-                        "src": "1327:47:1",
+                        "src": "1340:53:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -4050,14 +4067,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4e6f20676f6c64206567677320617661696c61626c65",
-                        "id": 354,
+                        "id": 471,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1376:24:1",
+                        "src": "1395:24:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_2cae33c630151e0da19cb1eb0214aa43011f76fd8cfe274dfd3437fc5ac6d556",
@@ -4077,21 +4094,21 @@
                           "typeString": "literal_string \"No gold eggs available\""
                         }
                       ],
-                      "id": 345,
+                      "id": 462,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        466,
-                        467
+                        583,
+                        584
                       ],
-                      "referencedDeclaration": 467,
-                      "src": "1319:7:1",
+                      "referencedDeclaration": 584,
+                      "src": "1332:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 355,
+                    "id": 472,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4099,20 +4116,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1319:82:1",
+                    "src": "1332:88:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 356,
+                  "id": 473,
                   "nodeType": "ExpressionStatement",
-                  "src": "1319:82:1"
+                  "src": "1332:88:1"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 364,
+                    "id": 481,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4121,50 +4138,50 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 357,
+                        "id": 474,
                         "name": "goldEggsOwnedBy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 243,
-                        "src": "1411:15:1",
+                        "referencedDeclaration": 358,
+                        "src": "1430:15:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                           "typeString": "mapping(address => uint256)"
                         }
                       },
-                      "id": 362,
+                      "id": 479,
                       "indexExpression": {
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 358,
+                          "id": 475,
                           "name": "barnIsOwnedBy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 234,
-                          "src": "1427:13:1",
+                          "referencedDeclaration": 349,
+                          "src": "1446:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                             "typeString": "mapping(address => address)"
                           }
                         },
-                        "id": 361,
+                        "id": 478,
                         "indexExpression": {
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 359,
+                            "id": 476,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 463,
-                            "src": "1441:3:1",
+                            "referencedDeclaration": 580,
+                            "src": "1460:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 360,
+                          "id": 477,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4172,7 +4189,7 @@
                           "memberName": "sender",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "1441:10:1",
+                          "src": "1460:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
@@ -4183,7 +4200,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "1427:25:1",
+                        "src": "1446:25:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -4194,7 +4211,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1411:42:1",
+                      "src": "1430:42:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -4204,98 +4221,120 @@
                     "operator": "-=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "31",
-                      "id": 363,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": true,
-                      "kind": "number",
-                      "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "1457:1:1",
-                      "subdenomination": null,
+                      "id": 480,
+                      "name": "_amount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 447,
+                      "src": "1476:7:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_1_by_1",
-                        "typeString": "int_const 1"
-                      },
-                      "value": "1"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "src": "1411:47:1",
+                    "src": "1430:53:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 365,
+                  "id": 482,
                   "nodeType": "ExpressionStatement",
-                  "src": "1411:47:1"
+                  "src": "1430:53:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 367,
+            "id": 484,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "spendGoldEgg",
+            "name": "spendGoldEggs",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 331,
+              "id": 448,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1221:2:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 447,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 484,
+                  "src": "1223:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 446,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1223:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1222:14:1"
             },
             "returnParameters": {
-              "id": 332,
+              "id": 449,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1233:0:1"
+              "src": "1246:0:1"
             },
-            "scope": 391,
-            "src": "1200:265:1",
+            "scope": 508,
+            "src": "1200:290:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 378,
+              "id": 495,
               "nodeType": "Block",
-              "src": "1535:48:1",
+              "src": "1562:48:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 373,
+                      "id": 490,
                       "name": "barnsOwnedBy",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 239,
-                      "src": "1552:12:1",
+                      "referencedDeclaration": 354,
+                      "src": "1579:12:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_address_$dyn_storage_$",
                         "typeString": "mapping(address => address[] storage ref)"
                       }
                     },
-                    "id": 376,
+                    "id": 493,
                     "indexExpression": {
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 374,
+                        "id": 491,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 463,
-                        "src": "1565:3:1",
+                        "referencedDeclaration": 580,
+                        "src": "1592:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 375,
+                      "id": 492,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4303,7 +4342,7 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "1565:10:1",
+                      "src": "1592:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
@@ -4314,43 +4353,43 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "1552:24:1",
+                    "src": "1579:24:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage",
                       "typeString": "address[] storage ref"
                     }
                   },
-                  "functionReturnParameters": 372,
-                  "id": 377,
+                  "functionReturnParameters": 489,
+                  "id": 494,
                   "nodeType": "Return",
-                  "src": "1545:31:1"
+                  "src": "1572:31:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 379,
+            "id": 496,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getOwnedBarns",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 368,
+              "id": 485,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1493:2:1"
+              "src": "1518:2:1"
             },
             "returnParameters": {
-              "id": 372,
+              "id": 489,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 371,
+                  "id": 488,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 379,
-                  "src": "1517:16:1",
+                  "scope": 496,
+                  "src": "1544:16:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4359,20 +4398,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 369,
+                      "id": 486,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1517:7:1",
+                      "src": "1544:7:1",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 370,
+                    "id": 487,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1517:9:1",
+                    "src": "1544:9:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -4382,53 +4421,53 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1516:18:1"
+              "src": "1543:18:1"
             },
-            "scope": 391,
-            "src": "1471:112:1",
+            "scope": 508,
+            "src": "1496:114:1",
             "stateMutability": "view",
             "superFunction": null,
-            "visibility": "public"
+            "visibility": "external"
           },
           {
             "body": {
-              "id": 389,
+              "id": 506,
               "nodeType": "Block",
-              "src": "1643:51:1",
+              "src": "1672:51:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 384,
+                      "id": 501,
                       "name": "goldEggsOwnedBy",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 243,
-                      "src": "1660:15:1",
+                      "referencedDeclaration": 358,
+                      "src": "1689:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                         "typeString": "mapping(address => uint256)"
                       }
                     },
-                    "id": 387,
+                    "id": 504,
                     "indexExpression": {
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 385,
+                        "id": 502,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 463,
-                        "src": "1676:3:1",
+                        "referencedDeclaration": 580,
+                        "src": "1705:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 386,
+                      "id": 503,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4436,7 +4475,7 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "1676:10:1",
+                      "src": "1705:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
@@ -4447,43 +4486,43 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "1660:27:1",
+                    "src": "1689:27:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 383,
-                  "id": 388,
+                  "functionReturnParameters": 500,
+                  "id": 505,
                   "nodeType": "Return",
-                  "src": "1653:34:1"
+                  "src": "1682:34:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 390,
+            "id": 507,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getGoldEggCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 380,
+              "id": 497,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1613:2:1"
+              "src": "1640:2:1"
             },
             "returnParameters": {
-              "id": 383,
+              "id": 500,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 382,
+                  "id": 499,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 390,
-                  "src": "1637:4:1",
+                  "scope": 507,
+                  "src": "1666:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4491,10 +4530,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 381,
+                    "id": 498,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1637:4:1",
+                    "src": "1666:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4504,20 +4543,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1636:6:1"
+              "src": "1665:6:1"
             },
-            "scope": 391,
-            "src": "1589:105:1",
+            "scope": 508,
+            "src": "1616:107:1",
             "stateMutability": "view",
             "superFunction": null,
-            "visibility": "public"
+            "visibility": "external"
           }
         ],
-        "scope": 392,
-        "src": "25:1671:1"
+        "scope": 509,
+        "src": "25:1700:1"
       }
     ],
-    "src": "0:1697:1"
+    "src": "0:1726:1"
   },
   "compiler": {
     "name": "solc",
@@ -4577,10 +4616,34 @@
       "links": {},
       "address": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
       "transactionHash": "0xc9897a27c9bd5b6004fb116a2e487085ee6dab2d0044dd2265fdaa696eb49ec5"
+    },
+    "1567074511516": {
+      "events": {},
+      "links": {},
+      "address": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
+      "transactionHash": "0xc9897a27c9bd5b6004fb116a2e487085ee6dab2d0044dd2265fdaa696eb49ec5"
+    },
+    "1567091893790": {
+      "events": {},
+      "links": {},
+      "address": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
+      "transactionHash": "0xab132d564c4404fb836bf5f4579d8f7aae6f3401b1ff403607346342775c90ff"
+    },
+    "1567091970302": {
+      "events": {},
+      "links": {},
+      "address": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
+      "transactionHash": "0xab132d564c4404fb836bf5f4579d8f7aae6f3401b1ff403607346342775c90ff"
+    },
+    "1567092074997": {
+      "events": {},
+      "links": {},
+      "address": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
+      "transactionHash": "0xab132d564c4404fb836bf5f4579d8f7aae6f3401b1ff403607346342775c90ff"
     }
   },
   "schemaVersion": "3.0.13",
-  "updatedAt": "2019-08-29T10:14:43.224Z",
+  "updatedAt": "2019-08-29T15:24:54.625Z",
   "devdoc": {
     "methods": {}
   },

@@ -1,5 +1,33 @@
 .chicken {
+  position: relative;
   width: 100%;
+
+  .medal-img {
+    background-image: url("/medals.jpg");
+    background-size: 200px;
+    position: absolute;
+    margin: 0 auto;
+    height: 26px;
+    width: 17px;
+    left: 0;
+    top: 10px;
+
+    &.bronze {
+      background-position: -43px -224px;
+    }
+
+    &.silver {
+      background-position: -66px -224px;
+    }
+
+    &.gold {
+      background-position: -91px -224px;
+    }
+
+    &.gold-plus {
+      background-position: -141px -224px;
+    }
+  }
 
   .chicken-img {
     background-image: url("/chicken.gif");
@@ -40,8 +68,9 @@
     }
   }
 
-  button {
-    display: block;
-    margin: 10px auto;
+  .actions {
+    justify-content: space-between;
+    margin-top: 10px;
+    display: flex;
   }
 }

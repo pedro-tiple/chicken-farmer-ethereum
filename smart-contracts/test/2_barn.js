@@ -147,4 +147,50 @@ contract("Barn", async accounts => {
             assert.equal(e.reason, "Chicken still resting", "should fail if chicken still resting");
         }
     });
+
+    it("can sell a chicken", async () => {
+        const barn = await Barn.deployed();
+
+        await barn.sellChicken(0);
+        const chicken = await barn.chickens(0);
+        assert.equal(chicken.available, false, "should have marked the chicken with available as false");
+
+        try {
+            await barn.sellChicken(0);
+        } catch (e) {
+            assert.equal(e.reason, "Chicken already sold", "should fail if chicken already sold");
+        }
+
+        try {
+            await barn.feedChicken(0);
+        } catch (e) {
+            assert.equal(e.reason, "Chicken sold", "should fail if chicken has been sold before");
+        }
+
+        try {
+            await barn.sellChicken(999);
+        } catch (e) {
+            assert.equal(e.reason, "Chicken does not exist", "invalid chicken barcode should fail");
+        }
+    });
+
+    it("can buy an autofeeder", async () => {
+        const brc = await BarnRegistrationCenter.deployed();
+        const barn = await Barn.deployed();
+        assert.equal(await barn.autoFeederBought.call(), false, "should not have autofeeder bought by default");
+
+
+        const autoFeederCost = (await barn.autoFeederCost.call()).toNumber();
+        for (let i = 0; i < autoFeederCost; i++) {
+            await brc.receiveNewGoldEgg({ from: accounts[1] });
+        }
+        await barn.buyAutoFeeder();
+        assert.equal(await barn.autoFeederBought.call(), true, "should have marked the chicken with available as false");
+
+        try {
+            await barn.buyAutoFeeder();
+        } catch (e) {
+            assert.equal(e.reason, "AutoFeeder already bought", "should not be able to buy autofeeder more than once");
+        }
+    });
 });

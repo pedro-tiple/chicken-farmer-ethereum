@@ -31,17 +31,17 @@ contract BarnRegistrationCenter {
         goldEggsOwnedBy[barnIsOwnedBy[msg.sender]] += 1;
     }
 
-    function spendGoldEgg() external {
+    function spendGoldEggs(uint _amount) external {
         require(barnIsOwnedBy[msg.sender] != address(0), "Barn not owned");
-        require(goldEggsOwnedBy[barnIsOwnedBy[msg.sender]] >= 1, "No gold eggs available");
-        goldEggsOwnedBy[barnIsOwnedBy[msg.sender]] -= 1;
+        require(goldEggsOwnedBy[barnIsOwnedBy[msg.sender]] >= _amount, "No gold eggs available");
+        goldEggsOwnedBy[barnIsOwnedBy[msg.sender]] -= _amount;
     }
 
-    function getOwnedBarns() public view returns (address[] memory) {
+    function getOwnedBarns() external view returns (address[] memory) {
         return barnsOwnedBy[msg.sender];
     }
 
-    function getGoldEggCount() public view returns (uint) {
+    function getGoldEggCount() external view returns (uint) {
         return goldEggsOwnedBy[msg.sender];
     }
 }

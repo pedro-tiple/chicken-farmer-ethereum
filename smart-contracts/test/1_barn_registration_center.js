@@ -55,4 +55,20 @@ contract("BarnRegistrationCenter", async accounts => {
             assert.equal(e.reason, "Barn not owned", "new gold egg should not be accepted from not registered barn");
         }
     });
+
+    it("spending gold eggs should decrease their amount", async () => {
+        const brc = await BarnRegistrationCenter.deployed();
+
+        await brc.receiveNewGoldEgg({ from: accounts[1] });
+        await brc.spendGoldEggs(1, { from: accounts[1] });
+
+        let balance = await brc.getGoldEggCount.call({ from: accounts[0] });
+        assert.equal(balance, 0, "spending a gold egg should have decreased the available count");
+
+        try {
+            await brc.spendGoldEggs(999, { from: accounts[1] });
+        } catch (e) {
+            assert.equal(e.reason, "No gold eggs available", "should fail if there are not enough eggs available");
+        }
+    });
 });

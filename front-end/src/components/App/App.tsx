@@ -27,7 +27,7 @@ export class App extends React.Component<{}, State> {
       <div className="app">
         <div className="barn-registration-center-container">
           {this.state.api &&
-            <BarnRegistrationCenter api={this.state.api}/>
+          <BarnRegistrationCenter api={this.state.api}/>
           }
         </div>
       </div>
