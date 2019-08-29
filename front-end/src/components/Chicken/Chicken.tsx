@@ -1,6 +1,7 @@
 import React from 'react';
 import './Chicken.scss';
-import Web3 from 'web3';
+import IAPI from "../../classes/API/IAPI";
+import EthereumAPI from "../../classes/API/EthereumAPI";
 
 export interface ChickenType {
   blockOfPurchase: number;
@@ -18,14 +19,14 @@ enum Action {
 }
 
 interface Props {
-  web3: Web3;
+  api: IAPI;
   chicken: ChickenType;
   barcode: number;
   onFeed?: Function;
 }
 
 interface State {
-  action: String;
+  action: string;
   block: number;
 }
 
@@ -48,8 +49,10 @@ export class Chicken extends React.Component<Props, State> {
   }
 
   async getCurrentBlock() {
+    // voodoo magic to let use proper casting
+    const ethAPI = this.props.api as unknown as EthereumAPI;
     this.setState({
-      block: await this.props.web3.eth.getBlockNumber()
+      block: await ethAPI.getBlockNumber()
     });
   }
 
@@ -59,6 +62,7 @@ export class Chicken extends React.Component<Props, State> {
     if (this.props.chicken.restingUntil >= this.state.block) {
       this.setState({ action: Action.FEEDING });
     } else {
+    	// only restart randomizing state if still feeding
       this.state.action === Action.FEEDING && this.randomizeAction(1);
     }
   }
@@ -71,6 +75,7 @@ export class Chicken extends React.Component<Props, State> {
       }
 
       const actions = Object.values(Action);
+      // pick random action except for the last one which should be the feeding one
       this.setState({action: actions[Math.floor(Math.random() * (actions.length - 1))]});
       this.randomizeAction();
     }, timeout || Math.max(2000, Math.random() * 5000)) // random wait between [2s, 5s]

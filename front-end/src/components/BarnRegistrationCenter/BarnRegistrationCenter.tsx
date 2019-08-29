@@ -1,12 +1,11 @@
-import Web3 from 'web3';
 import React from 'react';
-import './BarnRegistrationCenter.scss';
-import barnRegistrationCenterABI from '../../contracts/BarnRegistrationCenter.json';
-import barnABI from '../../contracts/Barn.json';
 import {Barn} from "../Barn/Barn";
+import './BarnRegistrationCenter.scss';
+import IAPI from "../../classes/API/IAPI";
+import EthereumAPI from "../../classes/API/EthereumAPI";
 
 interface Props {
-  web3: Web3;
+  api: IAPI;
 }
 
 interface State {
@@ -14,9 +13,8 @@ interface State {
   goldEggCount: number;
   balance: string;
   block: number;
-  accounts: Array<string>;
-  barnRegistrationCenterContract: any;
   error?: string;
+	barnCostInGoldEggs: number;
 }
 
 export class BarnRegistrationCenter extends React.Component<Props, State> {
@@ -28,8 +26,7 @@ export class BarnRegistrationCenter extends React.Component<Props, State> {
       goldEggCount: 0,
       balance: "0",
       block: 0,
-      accounts: [],
-      barnRegistrationCenterContract: undefined,
+			barnCostInGoldEggs: 0,
     };
 
     // This binding is necessary to make `this` work on the callbacks
@@ -39,21 +36,12 @@ export class BarnRegistrationCenter extends React.Component<Props, State> {
   }
 
   async componentDidMount() {
-    let accounts = await this.props.web3.eth.getAccounts();
 
-    // hardcoded contract address generated from migration when running > ganache-cli -d
-    let barnRegistrationCenterContract = new this.props.web3.eth.Contract(
-      barnRegistrationCenterABI.abi,
-      '0xCfEB869F69431e42cdB54A4F4f105C19C080A601',
-      { from: accounts[0] }
-    );
+    await this.updateStats();
 
-    this.setState({
-      accounts,
-      barnRegistrationCenterContract,
-    });
-
-    this.updateStats();
+		this.setState({
+			barnCostInGoldEggs: await this.props.api.getBarnCostInGoldEggs()
+		});
 
     // fetch the block every second
     setInterval(() => {
@@ -61,38 +49,23 @@ export class BarnRegistrationCenter extends React.Component<Props, State> {
     }, 1000)
   }
 
-  async getBarns() {
-    let barns = await this.state.barnRegistrationCenterContract.methods.getOwnedBarns().call();
-    this.setState({
-      barns
-    });
-  }
-
-  async getGoldenEggs() {
-    let goldEggCount = await this.state.barnRegistrationCenterContract.methods.getGoldEggCount().call();
-    this.setState({
-      goldEggCount
-    });
-  }
-
-  async getBalance() {
-    let balance = await this.props.web3.eth.getBalance(this.state.accounts[0]);
-    this.setState({
-      balance: this.props.web3.utils.fromWei(balance)
-    });
-  }
-
   async getCurrentBlock() {
-    this.setState({
-      block: await this.props.web3.eth.getBlockNumber()
-    });
+		// voodoo magic to let use proper casting
+		const ethAPI = this.props.api as unknown as EthereumAPI;
+		this.setState({
+			block: await ethAPI.getBlockNumber()
+		});
   }
 
-  updateStats() {
-    this.getBarns();
-    this.getGoldenEggs();
-    this.getBalance();
-    this.getCurrentBlock();
+  async updateStats() {
+		// voodoo magic to let use proper casting
+		const ethAPI = this.props.api as unknown as EthereumAPI;
+		this.setState({
+			barns: await this.props.api.getBarns(),
+			goldEggCount: await this.props.api.getGoldenEggs(),
+			balance: await ethAPI.getBalance(),
+			block: await ethAPI.getBlockNumber()
+		});
   }
 
   showError(errorMessage: string) {
@@ -108,30 +81,16 @@ export class BarnRegistrationCenter extends React.Component<Props, State> {
   }
 
   async registerBarn() {
-    if (this.state.barns.length > 0 && Number(this.state.goldEggCount) < await this.state.barnRegistrationCenterContract.methods.barnCostInGoldEggs().call()) {
+    if (this.state.barns.length > 0 && Number(this.state.goldEggCount) < this.state.barnCostInGoldEggs) {
       this.showError("Not enough gold eggs!");
       return
     }
 
-    new this.props.web3.eth.Contract(barnABI.abi).deploy({
-      data: barnABI.bytecode,
-      arguments: [this.state.barnRegistrationCenterContract.options.address]
-    })
-      .send({
-        from: this.state.accounts[0],
-        gas: 810000 // got this from deploying the contract manually
-      })
-      .on('receipt', (receipt: any) => {
-        this.state.barnRegistrationCenterContract.methods.registerBarn(receipt.contractAddress)
-          .send()
-          .then(() => {
-            this.updateStats();
-          })
-          .catch(() => {
-            // TODO reuse the deployed barn on the next registration attempt
-            this.showError("Couldn't register the barn! Make sure you have enough ETH and gold eggs!");
-          });
-      });
+    if (await this.props.api.registerNewBarn()) {
+			this.updateStats();
+		} else {
+			this.showError("Couldn't register the barn! Make sure you have enough ETH and gold eggs!");
+		}
   }
 
   render() {
@@ -153,7 +112,7 @@ export class BarnRegistrationCenter extends React.Component<Props, State> {
             <Barn
               barnAddress={barnAddress}
               key={key}
-              web3={this.props.web3}
+              api={this.props.api}
               onUpdate={this.updateStats}
               onError={this.showError}
             />
