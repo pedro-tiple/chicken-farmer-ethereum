@@ -5,7 +5,7 @@ contract BarnRegistrationCenter {
 
     function receiveNewGoldEgg() external {}
     function spendGoldEggs(uint) external {}
-	function getGoldEggCount() external view returns (uint) {}
+    function getGoldEggCount() external view returns (uint) {}
 }
 
 contract Barn {
@@ -45,10 +45,10 @@ contract Barn {
     }
 
     function buyAutoFeeder() external onlyOwner {
-		require(autoFeederBought == false, "AutoFeeder already bought");
-		barnRegistrationCenter.spendGoldEggs(autoFeederCost);
-		autoFeederBought = true;
-	}
+        require(autoFeederBought == false, "AutoFeeder already bought");
+        barnRegistrationCenter.spendGoldEggs(autoFeederCost);
+        autoFeederBought = true;
+    }
 
     function newChicken() external onlyOwner {
         barnRegistrationCenter.spendGoldEggs(chickenCost);
@@ -89,11 +89,11 @@ contract Barn {
     }
 
     function getChickenCount() public view returns (uint) {
-		return chickens.length;
-	}
+        return chickens.length;
+    }
 
-	function rng(uint max) private view returns (uint8) {
+    function rng(uint max) private view returns (uint8) {
         // got this online, we don't really care if some miner cheats at this, should return in [0, max]
-		return uint8(uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty))) % max);
-	}
+        return uint8(uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty))) % max);
+    }
 }
