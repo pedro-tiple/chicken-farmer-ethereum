@@ -14,18 +14,18 @@ export interface ChickenType {
 }
 
 enum Action {
-  STANDING_LEFT		= "standing-left",
-  STANDING_RIGHT	= "standing-right",
-  SITTING_LEFT		= "sitting-left",
-  SITTING_RIGHT		= "sitting-right",
-  FEEDING					= "feeding"
+  STANDING_LEFT   = "standing-left",
+  STANDING_RIGHT  = "standing-right",
+  SITTING_LEFT    = "sitting-left",
+  SITTING_RIGHT   = "sitting-right",
+  FEEDING         = "feeding"
 }
 
 enum Medal {
-  BRONZE		= "bronze",
-  SILVER		= "silver",
-  GOLD			= "gold",
-  GOLDPLUS	= "gold-plus",
+  BRONZE    = "bronze",
+  SILVER    = "silver",
+  GOLD      = "gold",
+  GOLDPLUS  = "gold-plus",
 }
 
 interface Props {

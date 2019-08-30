@@ -29,8 +29,8 @@ export class Barn extends React.Component<Props, State> {
   }
 
   async componentDidMount() {
-    this.getChickens();
-    this.getFeed();
+    this.fetchChickens();
+    this.fetchFeed();
     this.startAutoFeeder();
 
     // This binding is necessary to make `this` work on the callbacks
@@ -62,13 +62,13 @@ export class Barn extends React.Component<Props, State> {
     }
   }
 
-  async getChickens() {
+  async fetchChickens() {
     this.setState({
       chickens: await this.props.api.getChickens(this.props.barnAddress)
     });
   }
 
-  async getFeed() {
+  async fetchFeed() {
     this.setState({
       feed: await this.props.api.getAvailableFeed(this.props.barnAddress)
     });
@@ -77,7 +77,7 @@ export class Barn extends React.Component<Props, State> {
   async buyChicken() {
     if (await this.props.api.buyChicken(this.props.barnAddress)) {
       this.props.onUpdate && this.props.onUpdate();
-      this.getChickens();
+      this.fetchChickens();
     } else {
       this.props.onError && this.props.onError("Couldn't buy chicken! Make sure you have enough ETH and gold eggs!");
     }
@@ -86,7 +86,7 @@ export class Barn extends React.Component<Props, State> {
   async buyFeed() {
     if (await this.props.api.buyFeed(this.props.barnAddress)) {
       this.props.onUpdate && this.props.onUpdate();
-      this.getFeed();
+      this.fetchFeed();
     } else {
       this.props.onError && this.props.onError("Couldn't buy feed! Make sure you have enough ETH and gold eggs!");
     }
@@ -103,8 +103,8 @@ export class Barn extends React.Component<Props, State> {
   async feedChicken(chickenBarcode: number) {
     if (await this.props.api.feedChicken(this.props.barnAddress, chickenBarcode)) {
       this.props.onUpdate && this.props.onUpdate();
-      this.getChickens();
-      this.getFeed();
+      this.fetchChickens();
+      this.fetchFeed();
     } else {
       this.props.onError && this.props.onError("Couldn't feed chicken! Make sure you have enough ETH, gold eggs, and the chicken is ready to feed!");
     }
@@ -113,8 +113,8 @@ export class Barn extends React.Component<Props, State> {
   async sellChicken(chickenBarcode: number) {
     if (await this.props.api.sellChicken(this.props.barnAddress, chickenBarcode)) {
       this.props.onUpdate && this.props.onUpdate();
-      this.getChickens();
-      this.getFeed();
+      this.fetchChickens();
+      this.fetchFeed();
     } else {
       this.props.onError && this.props.onError("Couldn't feed chicken! Make sure you have enough ETH, gold eggs, and the chicken is ready to feed!");
     }
