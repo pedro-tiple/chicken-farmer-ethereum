@@ -108,7 +108,7 @@ Proposed fix: move gold egg generation logic to BRC.
 Proposed fix: remove hardcoded node connection. Improve UI to handle waiting for transaction confirmation.
 
 - Some high ranking chickens fail feeding due to insufficient gas.<br/>
-Proposed fix: n/a. Need to research why gas estimation is failing in these cases.
+Proposed fix: N/A. Need to research why gas estimation is failing in these cases.
 
 - Improve game progression.<br/>
 Proposed fix: add feed buy amount progression to allow Barns with more chickens.
